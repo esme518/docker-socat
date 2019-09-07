@@ -9,10 +9,11 @@ RUN set -ex \
     && rm -rf /var/cache/apk
 
 ENV PORT  8388
+ENV PORT2 8388
 ENV HOST  example.com
 
 EXPOSE $PORT/tcp
 EXPOSE $PORT/udp
 
-CMD socat -d -d TCP4-LISTEN:$PORT,fork,reuseaddr TCP4:$HOST:$PORT & \
-    socat -d -d UDP4-LISTEN:$PORT,fork,reuseaddr UDP4:$HOST:$PORT
+CMD socat -d -d TCP4-LISTEN:$PORT,fork,reuseaddr TCP4:$HOST:$PORT2 & \
+    socat -d -d UDP4-LISTEN:$PORT,fork,reuseaddr UDP4:$HOST:$PORT2
