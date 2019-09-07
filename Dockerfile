@@ -15,5 +15,5 @@ ENV HOST  example.com
 EXPOSE $PORT/tcp
 EXPOSE $PORT/udp
 
-CMD socat -d -d TCP4-LISTEN:$PORT,fork,reuseaddr TCP4:$HOST:$PORT2 & \
-    socat -d -d UDP4-LISTEN:$PORT,fork,reuseaddr UDP4:$HOST:$PORT2
+CMD socat -d -d TCP-LISTEN:$PORT,fork,reuseaddr TCP4:$HOST:$PORT2 & \
+    socat -d -d UDP-LISTEN:$PORT,fork,reuseaddr UDP4:$HOST:$PORT2
