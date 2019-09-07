@@ -8,8 +8,8 @@ RUN set -ex \
     && apk add --update socat \
     && rm -rf /var/cache/apk
 
-ENV PORT  8388
-ENV PORT2 8388
+ENV PORT  8080
+ENV PORT2 8080
 ENV HOST  example.com
 
 EXPOSE $PORT/tcp
