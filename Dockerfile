@@ -2,7 +2,7 @@
 # Dockerfile for socat
 #
 
-FROM alpine
+FROM alpine:latest
 
 RUN set -ex \
     && apk add --update socat \
